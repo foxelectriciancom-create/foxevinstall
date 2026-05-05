@@ -1,0 +1,104 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import CTA from '../../components/CTA.astro';
+---
+
+<Base
+  title="Commercial EV Charging Solutions"
+  description="Commercial EV charger installation for offices, apartments, HOAs, retail, and fleet depots. Load management, smart charging, utility incentive coordination."
+>
+  <Hero
+    title="Commercial EV Solutions"
+    subtitle="Multi-Charger Installations for Business"
+    cta="Request a Proposal"
+  />
+
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-4">EV Charging for Your Property</h2>
+      <p class="text-gray leading-relaxed mb-8">
+        Whether you manage an office building, apartment complex, or retail location — we design and install complete EV charging solutions with smart load management and utility incentive coordination.
+      </p>
+
+      <!-- Property Types -->
+      <h3 class="text-xl font-bold mb-4">Properties We Serve</h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+        {[
+          'Office Buildings',
+          'Apartments & Condos',
+          'HOA Communities',
+          'Retail & Hospitality',
+          'Fleet Depots',
+          'Parking Structures',
+        ].map((type) => (
+          <div class="bg-light rounded-lg p-4 text-center text-sm font-medium text-dark">
+            {type}
+          </div>
+        ))}
+      </div>
+
+      <!-- Equipment -->
+      <h3 class="text-xl font-bold mb-4">Commercial Equipment</h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+        {[
+          'ChargePoint CPF50',
+          'Tesla Wall Connector',
+          'Autel MaxiCharger',
+          'JuiceBox Pro',
+          'Enel X JuicePole',
+          'Custom Solutions',
+        ].map((brand) => (
+          <div class="bg-light rounded-lg p-4 text-center text-sm font-medium text-dark">
+            {brand}
+          </div>
+        ))}
+      </div>
+
+      <!-- Process -->
+      <h3 class="text-xl font-bold mb-6">Commercial Installation Process</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        {[
+          { step: '1', title: 'Site Survey & Design', desc: 'Property evaluation, load analysis, and detailed proposal with equipment recommendations.' },
+          { step: '2', title: 'Engineering & Permits', desc: 'Engineering drawings, permit applications, and utility coordination for service upgrades.' },
+          { step: '3', title: 'Installation', desc: 'Licensed electrician work with minimal operational disruption. Phased rollout available.' },
+          { step: '4', title: 'Activation & Training', desc: 'City inspection, network setup, and documentation for your property management team.' },
+        ].map((item) => (
+          <div class="bg-light rounded-xl p-6">
+            <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm mb-3">
+              {item.step}
+            </div>
+            <h4 class="font-bold mb-2">{item.title}</h4>
+            <p class="text-gray text-sm">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Incentives -->
+      <h3 class="text-xl font-bold mb-4">Financial Incentives</h3>
+      <div class="space-y-4 mb-12">
+        {[
+          { name: 'CALeVIP', amount: 'Up to $6,500 per Level 2 charger' },
+          { name: 'Federal Tax Credit (30C)', amount: 'Up to 30% of costs (max $100,000)' },
+          { name: 'PG&E EV Charge Network', amount: 'Multi-unit residential rebates' },
+          { name: 'BAAQMD', amount: 'Workplace charging grants' },
+        ].map((incentive) => (
+          <div class="flex justify-between items-center bg-light rounded-lg p-4">
+            <span class="font-medium text-dark">{incentive.name}</span>
+            <span class="text-primary font-semibold text-sm">{incentive.amount}</span>
+          </div>
+        ))}
+      </div>
+
+      <!-- Load Management -->
+      <div class="bg-primary/5 border border-primary/20 rounded-xl p-6">
+        <h4 class="font-bold text-lg mb-2">Smart Load Management</h4>
+        <p class="text-gray text-sm leading-relaxed">
+          Load management dynamically distributes available electrical capacity across multiple chargers. Instead of each charger drawing full power simultaneously, the system adjusts charging rates based on demand — allowing more chargers without expensive infrastructure upgrades.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CTA title="Ready to Add EV Charging?" subtitle="Free site survey and custom proposal for your property" />
+</Base>

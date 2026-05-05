@@ -1,0 +1,137 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import CTA from '../../components/CTA.astro';
+---
+
+<Base
+  title="Electrical Panel Upgrade"
+  description="100A to 200A panel upgrade from $2,800. 400A upgrades from $6,500. Includes PG&E coordination, city permit, and inspection. Bay Area licensed C-10 contractor."
+>
+  <Hero
+    title="Electrical Panel Upgrade"
+    subtitle="100A to 200A & 200A to 400A Service Upgrades"
+    price="$2,800"
+  />
+
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-4">When You Need a Panel Upgrade</h2>
+      <p class="text-gray leading-relaxed mb-8">
+        Homes built before 2000 typically have 100-amp panels that cannot handle modern electrical demands. Adding a Level 2 EV charger to a 100A panel without upgrading is risky — it can overload your system and create fire hazards.
+      </p>
+
+      <!-- Pricing Options -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div class="border-2 border-primary rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-2">200A Upgrade</h3>
+          <p class="text-3xl font-bold text-primary mb-4">From $2,800</p>
+          <ul class="space-y-2 text-sm text-gray">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Supports 1–2 EV chargers
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Standard for single-family homes
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Handles modern all-electric homes
+            </li>
+          </ul>
+        </div>
+
+        <div class="border-2 border-gray-200 rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-2">400A Upgrade</h3>
+          <p class="text-3xl font-bold text-primary mb-4">From $6,500</p>
+          <ul class="space-y-2 text-sm text-gray">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Supports 3+ EV chargers
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              For large homes / heavy loads
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Future-proofs electrical system
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Signs You Need Upgrade -->
+      <h3 class="text-xl font-bold mb-4">Signs You Need an Upgrade</h3>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-12">
+        {[
+          'Panel rated 100 amps or less',
+          'Frequent breaker trips',
+          'Adding high-draw equipment',
+          'Panel uses fuses instead of breakers',
+          'Unsafe brands (Federal Pacific, Zinsco)',
+          'Planning home addition/renovation',
+          'Failed load calculation',
+        ].map((sign) => (
+          <li class="flex items-center gap-2 text-sm">
+            <svg class="w-4 h-4 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z" />
+            </svg>
+            {sign}
+          </li>
+        ))}
+      </ul>
+
+      <!-- What's Included -->
+      <h3 class="text-xl font-bold mb-4">What's Included</h3>
+      <ul class="space-y-3 mb-12">
+        {[
+          'New 200A or 400A breaker panel (Square D, Siemens, or Eaton)',
+          'New meter base and weatherhead',
+          'PG&E coordination and reconnection',
+          'Circuit transfer and labeling per NEC code',
+          'City permit and inspection',
+          'AFCI/GFCI protection where required',
+          'Grounding and bonding upgrades',
+        ].map((item) => (
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-dark">{item}</span>
+          </li>
+        ))}
+      </ul>
+
+      <!-- Process -->
+      <h3 class="text-xl font-bold mb-6">Installation Process</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        {[
+          { step: '1', title: 'Load Assessment', desc: 'Calculate existing loads, inspect panel condition, and determine upgrade requirements.' },
+          { step: '2', title: 'Permit & PG&E Coordination', desc: 'Pull city permits and coordinate with PG&E for temporary disconnect (1–2 weeks).' },
+          { step: '3', title: 'Installation Day', desc: '4–8 hour power shutdown for panel swap. All circuits transferred and labeled.' },
+          { step: '4', title: 'Inspection & Activation', desc: 'City inspector approves work. PG&E reconnects service. You\'re back online.' },
+        ].map((item) => (
+          <div class="bg-light rounded-xl p-6">
+            <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm mb-3">
+              {item.step}
+            </div>
+            <h4 class="font-bold mb-2">{item.title}</h4>
+            <p class="text-gray text-sm">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Bundle savings -->
+      <div class="bg-accent/10 border border-accent/30 rounded-xl p-6 mb-12">
+        <h4 class="font-bold text-lg mb-2">Bundle & Save $300–$500</h4>
+        <p class="text-gray text-sm">
+          Combining a panel upgrade with EV charger installation saves $300–500 versus scheduling them separately. One permit, one inspection, one visit.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CTA title="Need a Panel Upgrade?" subtitle="Free load assessment and written quote — no obligation" />
+</Base>

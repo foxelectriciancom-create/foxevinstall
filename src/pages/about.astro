@@ -1,0 +1,78 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import CTA from '../components/CTA.astro';
+import { site } from '../data/site';
+---
+
+<Base
+  title="About Us"
+  description="Licensed C-10 electrical contractor specializing in EV charger installation. Bay Area's dedicated EV charging experts serving 29+ cities."
+>
+  <Hero
+    title="About Fox EV Install"
+    subtitle="Bay Area's Dedicated EV Charging Experts"
+  />
+
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <p class="text-lg text-gray leading-relaxed mb-8">
+        Fox EV Install was founded to solve a simple problem: Bay Area homeowners buying electric vehicles couldn't find electricians who truly understood EV charging infrastructure.
+      </p>
+      <p class="text-gray leading-relaxed mb-12">
+        As a licensed C-10 electrical contractor, we specialize exclusively in EV charger installation and electrical panel upgrades — delivering code-compliant solutions for homeowners and businesses across the San Francisco Bay Area.
+      </p>
+
+      <!-- Mission -->
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-xl p-6 mb-12">
+        <h2 class="font-bold text-lg mb-2">Our Mission</h2>
+        <p class="text-gray leading-relaxed">
+          To make EV charging accessible to every Bay Area homeowner and business — through honest pricing, expert installation, and a commitment to doing every job right the first time.
+        </p>
+      </div>
+
+      <!-- Differentiators -->
+      <h2 class="text-2xl font-bold mb-6">What Makes Us Different</h2>
+      <div class="space-y-6 mb-12">
+        {[
+          { title: 'EV Charging Specialists', desc: 'This is all we do. No general electrical, no HVAC, no plumbing. 100% focused on EV charging infrastructure.' },
+          { title: 'Full Permit Support', desc: 'We handle every city permit, coordinate inspections, and ensure your installation passes on the first visit.' },
+          { title: 'Panel & Infrastructure Experts', desc: '200A and 400A upgrades, load calculations, and full infrastructure design for multi-charger setups.' },
+          { title: 'Residential & Commercial', desc: 'From single-family homes to apartment complexes and corporate campuses — we scale to any project.' },
+          { title: 'Local Bay Area Team', desc: `Based in San Carlos, serving ${site.citiesServed} cities across the Peninsula and South Bay.` },
+        ].map((item) => (
+          <div class="flex gap-4">
+            <div class="shrink-0 w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+              <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold mb-1">{item.title}</h3>
+              <p class="text-gray text-sm">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Credentials -->
+      <h2 class="text-2xl font-bold mb-6">Credentials</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {[
+          'California C-10 Licensed',
+          'Fully Insured',
+          'EV Charging Certified',
+          'Permits Included',
+          '5.0 Google Rating',
+          `${site.citiesServed} Cities Served`,
+        ].map((cred) => (
+          <div class="bg-light rounded-lg p-4 text-center text-sm font-medium text-dark">
+            {cred}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+</Base>

@@ -1,0 +1,49 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import CTA from '../../components/CTA.astro';
+import { serviceAreas, regions } from '../../data/serviceAreas';
+---
+
+<Base
+  title="Service Areas"
+  description="EV charger installation across 29+ Bay Area cities. Peninsula, South Bay, and San Francisco. Licensed C-10 contractor with local permitting expertise."
+>
+  <Hero
+    title="Service Areas"
+    subtitle="Serving 29+ Bay Area Cities"
+  />
+
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <p class="text-gray text-center max-w-3xl mx-auto mb-12">
+        Fox EV Install serves the Peninsula from Daly City to Palo Alto, and the South Bay from Mountain View to San Jose, plus coastal areas. Each city page includes local permitting information and details specific to homes in that community.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {Object.entries(regions).map(([key, label]) => (
+          <div>
+            <h2 class="text-xl font-bold mb-4 pb-2 border-b border-gray-200">{label}</h2>
+            <ul class="space-y-2">
+              {serviceAreas
+                .filter((a) => a.region === key)
+                .map((area) => (
+                  <li>
+                    <a
+                      href={`/service-areas/ev-charger-installation-${area.slug}/`}
+                      class="flex justify-between items-center py-2 px-3 rounded-lg hover:bg-light text-dark hover:text-primary transition-colors"
+                    >
+                      <span class="font-medium">{area.city}</span>
+                      <span class="text-xs text-gray">{area.zip}</span>
+                    </a>
+                  </li>
+                ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+</Base>

@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+---
+
+<Base
+  title="Privacy Policy"
+  description="Fox EV Install privacy policy. How we collect, use, and protect your personal information."
+>
+  <section class="py-16">
+    <div class="max-w-3xl mx-auto px-4 prose prose-gray">
+      <h1 class="text-3xl font-bold mb-8">Privacy Policy</h1>
+      <p class="text-sm text-gray mb-8">Last updated: January 2026</p>
+
+      <h2 class="text-xl font-bold mt-8 mb-3">Information We Collect</h2>
+      <p class="text-gray leading-relaxed mb-4">
+        When you contact us through our website, we collect information you provide directly: your name, email address, phone number, and message content. We use this information solely to respond to your inquiry and provide our services.
+      </p>
+
+      <h2 class="text-xl font-bold mt-8 mb-3">How We Use Your Information</h2>
+      <ul class="list-disc pl-6 text-gray space-y-2 mb-4">
+        <li>To respond to your service inquiries</li>
+        <li>To schedule consultations and installations</li>
+        <li>To send appointment confirmations and updates</li>
+        <li>To improve our website and services</li>
+      </ul>
+
+      <h2 class="text-xl font-bold mt-8 mb-3">Information Sharing</h2>
+      <p class="text-gray leading-relaxed mb-4">
+        We do not sell, trade, or rent your personal information to third parties. We may share information only when required by law or with service providers who assist in operating our website.
+      </p>
+
+      <h2 class="text-xl font-bold mt-8 mb-3">Data Security</h2>
+      <p class="text-gray leading-relaxed mb-4">
+        We implement appropriate security measures to protect your personal information. However, no method of transmission over the internet is 100% secure.
+      </p>
+
+      <h2 class="text-xl font-bold mt-8 mb-3">Contact Us</h2>
+      <p class="text-gray leading-relaxed">
+        If you have questions about this privacy policy, contact us at <a href={`mailto:${site.email}`} class="text-primary hover:underline">{site.email}</a> or call <a href={`tel:${site.phoneRaw}`} class="text-primary hover:underline">{site.phone}</a>.
+      </p>
+    </div>
+  </section>
+</Base>

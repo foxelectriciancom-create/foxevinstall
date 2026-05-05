@@ -1,0 +1,31 @@
+---
+import { site } from '../data/site';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const { title = 'Ready to Get Started?', subtitle = 'Schedule your free consultation today' } = Astro.props;
+---
+
+<section class="py-16 bg-primary text-white">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
+    <p class="text-white/80 text-lg mb-8">{subtitle}</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href="/contact/"
+        class="inline-flex items-center justify-center bg-accent hover:bg-accent-dark text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors"
+      >
+        Get a Free Quote
+      </a>
+      <a
+        href={`tel:${site.phoneRaw}`}
+        class="inline-flex items-center justify-center border-2 border-white/30 hover:border-white text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors"
+      >
+        Call {site.phone}
+      </a>
+    </div>
+  </div>
+</section>

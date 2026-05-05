@@ -1,0 +1,100 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import CTA from '../../components/CTA.astro';
+---
+
+<Base
+  title="Dedicated Circuits for EV Chargers"
+  description="240V dedicated EV circuit installation from $499. Proper breaker sizing, copper wire run, NEMA 14-50 outlet or hardwired. Bay Area licensed C-10 contractor."
+>
+  <Hero
+    title="Dedicated EV Circuit Installation"
+    subtitle="240V Circuits Sized for Your Charger"
+    price="$499"
+  />
+
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-4">Why You Need a Dedicated Circuit</h2>
+      <p class="text-gray leading-relaxed mb-8">
+        The NEC requires EV chargers to be on a dedicated circuit — meaning nothing else can share it. Sharing a circuit creates overload risk. A properly sized dedicated circuit ensures safe, full-speed charging every time.
+      </p>
+
+      <!-- Circuit Options -->
+      <h3 class="text-xl font-bold mb-4">Circuit Options</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div class="bg-light rounded-xl p-6">
+          <h4 class="font-bold mb-2">NEMA 14-50 Outlet</h4>
+          <p class="text-gray text-sm">240V, 50-amp outlet. Lets you easily unplug and swap chargers. Universal compatibility.</p>
+        </div>
+        <div class="bg-light rounded-xl p-6">
+          <h4 class="font-bold mb-2">Hardwired Connection</h4>
+          <p class="text-gray text-sm">Permanent wiring direct to charger. Cleaner look, required by some chargers at higher amperages.</p>
+        </div>
+      </div>
+
+      <!-- What's Included -->
+      <h3 class="text-xl font-bold mb-4">What's Included</h3>
+      <ul class="space-y-3 mb-12">
+        {[
+          'New 2-pole breaker in electrical panel',
+          'Copper wire run (up to 25 feet)',
+          'EMT conduit or Romex per code',
+          'NEMA outlet or junction box',
+          'Torqued connections to spec',
+          'Testing and verification',
+          'City electrical permit and final inspection',
+        ].map((item) => (
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-dark">{item}</span>
+          </li>
+        ))}
+      </ul>
+
+      <!-- Wire Sizing Guide -->
+      <h3 class="text-xl font-bold mb-4">Wire Gauge & Breaker Sizing</h3>
+      <div class="overflow-x-auto mb-12">
+        <table class="w-full text-sm">
+          <thead class="bg-light">
+            <tr>
+              <th class="text-left px-4 py-3 font-semibold">Charger Amperage</th>
+              <th class="text-left px-4 py-3 font-semibold">Breaker Size</th>
+              <th class="text-left px-4 py-3 font-semibold">Wire Gauge</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr><td class="px-4 py-3">32A</td><td class="px-4 py-3">40A</td><td class="px-4 py-3">8 AWG</td></tr>
+            <tr><td class="px-4 py-3">40A</td><td class="px-4 py-3">50A</td><td class="px-4 py-3">6 AWG</td></tr>
+            <tr><td class="px-4 py-3">48A</td><td class="px-4 py-3">60A</td><td class="px-4 py-3">6 AWG</td></tr>
+            <tr><td class="px-4 py-3">60A</td><td class="px-4 py-3">80A</td><td class="px-4 py-3">4 AWG</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Process -->
+      <h3 class="text-xl font-bold mb-6">Installation Process</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          { step: '1', title: 'Site Assessment', desc: 'Evaluate panel capacity, charger location, and wire routing options.' },
+          { step: '2', title: 'Permit & Scheduling', desc: 'Pull electrical permit. Most installs scheduled within one week.' },
+          { step: '3', title: 'Circuit Installation', desc: '2–4 hours for standard runs. Clean conduit work with proper supports.' },
+          { step: '4', title: 'Inspection & Ready', desc: 'City inspector verifies. Your circuit is ready for charger connection.' },
+        ].map((item) => (
+          <div class="bg-light rounded-xl p-6">
+            <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm mb-3">
+              {item.step}
+            </div>
+            <h4 class="font-bold mb-2">{item.title}</h4>
+            <p class="text-gray text-sm">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTA title="Need a Dedicated EV Circuit?" subtitle="Free assessment — we'll size your circuit correctly the first time" />
+</Base>

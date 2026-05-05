@@ -1,0 +1,75 @@
+---
+import { site } from '../data/site';
+---
+
+<footer class="bg-dark text-white">
+  <div class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <!-- Company -->
+    <div>
+      <h3 class="text-xl font-bold mb-4">
+        <span class="text-primary-light">Fox</span> EV Install
+      </h3>
+      <p class="text-gray-400 text-sm leading-relaxed">
+        {site.license} specializing in EV charger installation and electrical panel upgrades for residential and commercial customers throughout the San Francisco Bay Area.
+      </p>
+    </div>
+
+    <!-- Services -->
+    <div>
+      <h4 class="font-semibold mb-4">Services</h4>
+      <ul class="space-y-2 text-sm text-gray-400">
+        <li><a href="/services/ev-charger-installation/" class="hover:text-white transition-colors">EV Charger Installation</a></li>
+        <li><a href="/services/electrical-panel-upgrade/" class="hover:text-white transition-colors">Electrical Panel Upgrade</a></li>
+        <li><a href="/services/dedicated-circuits/" class="hover:text-white transition-colors">Dedicated Circuits</a></li>
+        <li><a href="/services/commercial-ev-solutions/" class="hover:text-white transition-colors">Commercial EV Solutions</a></li>
+      </ul>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h4 class="font-semibold mb-4">Quick Links</h4>
+      <ul class="space-y-2 text-sm text-gray-400">
+        <li><a href="/about/" class="hover:text-white transition-colors">About Us</a></li>
+        <li><a href="/service-areas/" class="hover:text-white transition-colors">Service Areas</a></li>
+        <li><a href="/faq/" class="hover:text-white transition-colors">FAQ</a></li>
+        <li><a href="/blog/" class="hover:text-white transition-colors">Blog</a></li>
+        <li><a href="/contact/" class="hover:text-white transition-colors">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <h4 class="font-semibold mb-4">Contact Us</h4>
+      <ul class="space-y-3 text-sm text-gray-400">
+        <li class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          <a href={`tel:${site.phoneRaw}`} class="hover:text-white transition-colors">{site.phone}</a>
+        </li>
+        <li class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <a href={`mailto:${site.email}`} class="hover:text-white transition-colors">{site.email}</a>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <div>
+            <div>{site.hours.weekday}</div>
+            <div>{site.hours.saturday}</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 py-6 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
+      <p>&copy; {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+      <a href="/privacy-policy/" class="hover:text-white transition-colors mt-2 sm:mt-0">Privacy Policy</a>
+    </div>
+  </div>
+</footer>

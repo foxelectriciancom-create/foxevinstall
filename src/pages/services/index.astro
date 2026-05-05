@@ -1,0 +1,68 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CTA from '../../components/CTA.astro';
+---
+
+<Base
+  title="Services"
+  description="EV charger installation, electrical panel upgrades, dedicated circuits, and commercial EV solutions. Licensed C-10 contractor serving the Bay Area."
+>
+  <Hero
+    title="Our Services"
+    subtitle="Complete EV Charging Solutions"
+  />
+
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <ServiceCard
+          title="EV Charger Installation"
+          description="Professional Level 2 charger installation for your home or business. Includes site assessment, dedicated 240V circuit, mounting, testing, and city permit with inspection."
+          price="From $799"
+          href="/services/ev-charger-installation/"
+        >
+          <svg slot="icon" class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </ServiceCard>
+
+        <ServiceCard
+          title="Electrical Panel Upgrade"
+          description="Upgrade from 100A to 200A or 400A service. Includes new breaker panel, meter base, PG&E coordination, circuit transfer, and full code compliance."
+          price="From $2,800"
+          href="/services/electrical-panel-upgrade/"
+        >
+          <svg slot="icon" class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+          </svg>
+        </ServiceCard>
+
+        <ServiceCard
+          title="Dedicated Circuits"
+          description="240V dedicated EV circuit with proper breaker sizing, copper wire run, conduit, NEMA outlet or hardwired connection, and city permit."
+          price="From $499"
+          href="/services/dedicated-circuits/"
+        >
+          <svg slot="icon" class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707" />
+          </svg>
+        </ServiceCard>
+
+        <ServiceCard
+          title="Commercial EV Solutions"
+          description="Multi-charger installations for offices, apartments, HOAs, retail, and fleet depots. Load management, smart charging, and utility incentive coordination."
+          price="Custom Quote"
+          href="/services/commercial-ev-solutions/"
+        >
+          <svg slot="icon" class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          </svg>
+        </ServiceCard>
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+</Base>

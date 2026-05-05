@@ -1,0 +1,108 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import CTA from '../../components/CTA.astro';
+import { site } from '../../data/site';
+---
+
+<Base
+  title="EV Charger Installation"
+  description="Professional Level 2 EV charger installation from $799. Includes dedicated 240V circuit, permit, inspection, and all major brands. Bay Area licensed C-10 contractor."
+>
+  <Hero
+    title="EV Charger Installation"
+    subtitle="Level 2 & Home EV Charger Installation"
+    price="$799"
+  />
+
+  <!-- Main Content -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-4">When You Need Professional EV Charger Installation</h2>
+      <p class="text-gray leading-relaxed mb-6">
+        Level 2 home chargers reduce charging time from 40–60 hours (Level 1) to just 6–10 hours — but they require professional installation with a 240V dedicated circuit. Our licensed electricians ensure your installation is safe, code-compliant, and built to last.
+      </p>
+
+      <!-- What's Included -->
+      <h3 class="text-xl font-bold mb-4">Installation Includes</h3>
+      <ul class="space-y-3 mb-10">
+        {[
+          'Site assessment and electrical panel evaluation',
+          'Dedicated 240V, 50A circuit from electrical panel',
+          'Up to 25 feet of conduit and wire run',
+          'NEMA 14-50 outlet or hardwired connection',
+          'Charger mounting and connection',
+          'Full testing and activation',
+          'City permit and inspection scheduling',
+        ].map((item) => (
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-dark">{item}</span>
+          </li>
+        ))}
+      </ul>
+
+      <!-- Process -->
+      <h3 class="text-xl font-bold mb-6">Our 4-Step Process</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        {[
+          { step: '1', title: 'Free Consultation', desc: '24-hour quote after initial assessment of your electrical system and charging needs.' },
+          { step: '2', title: 'Permit & Scheduling', desc: 'We handle the city permit application. Installation typically scheduled within one week.' },
+          { step: '3', title: 'Professional Installation', desc: '3–5 hours for standard residential installations by licensed C-10 electricians.' },
+          { step: '4', title: 'Inspection & Activation', desc: 'City inspector verifies code compliance. Your charger is ready to use.' },
+        ].map((item) => (
+          <div class="bg-light rounded-xl p-6">
+            <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm mb-3">
+              {item.step}
+            </div>
+            <h4 class="font-bold mb-2">{item.title}</h4>
+            <p class="text-gray text-sm">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Brands -->
+      <h3 class="text-xl font-bold mb-4">Brands We Install</h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+        {[
+          'Tesla Wall Connector',
+          'ChargePoint Home Flex',
+          'Enphase IQ EV Charger',
+          'Grizzl-E',
+          'JuiceBox',
+          'Autel MaxiCharger',
+        ].map((brand) => (
+          <div class="bg-light rounded-lg p-4 text-center text-sm font-medium text-dark">
+            {brand}
+          </div>
+        ))}
+      </div>
+
+      <!-- FAQ -->
+      <h3 class="text-xl font-bold mb-6">Frequently Asked Questions</h3>
+      <div class="space-y-4">
+        {[
+          { q: 'How long does installation take?', a: 'Most residential installations take 3–5 hours. Projects requiring panel upgrades may take a full day.' },
+          { q: 'Is a permit required?', a: 'Yes. California requires an electrical permit for EV charger installation. We handle the entire process — application, fees, and scheduling the city inspection.' },
+          { q: 'Can my panel support an EV charger?', a: 'Most homes with 200A service can support a Level 2 charger. Homes with 100A panels may need an upgrade — we determine this during the free consultation.' },
+          { q: 'Hardwire vs. outlet?', a: 'Both are code-compliant. Outlets offer flexibility to swap chargers; hardwiring is permanent and cleaner. Choice depends on your charger model.' },
+          { q: 'Are rebates available?', a: 'The federal tax credit covers up to 30% (max $1,000) for residential installations. Local utility rebates may also apply.' },
+        ].map((faq) => (
+          <details class="group bg-light rounded-xl p-5">
+            <summary class="font-semibold cursor-pointer list-none flex justify-between items-center">
+              {faq.q}
+              <svg class="w-5 h-5 text-gray group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <p class="mt-3 text-gray text-sm leading-relaxed">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTA title="Ready to Install Your EV Charger?" subtitle="Get a free quote — most installations scheduled within one week" />
+</Base>

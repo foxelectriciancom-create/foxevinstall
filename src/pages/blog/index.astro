@@ -1,0 +1,78 @@
+---
+import Base from '../../layouts/Base.astro';
+import { site } from '../../data/site';
+
+const posts = [
+  {
+    title: 'California EV Charger Rebates & Incentives in 2026',
+    slug: 'california-ev-charger-rebates-incentives-2026',
+    date: '2026-03-21',
+    excerpt: 'Save thousands on your EV charger installation with federal tax credits, state rebates, and local utility incentives available in California.',
+  },
+  {
+    title: 'How to Choose the Right EV Charger for Your Home',
+    slug: 'how-to-choose-right-ev-charger-for-home',
+    date: '2026-03-21',
+    excerpt: 'A complete buyer\'s guide to selecting the best Level 2 EV charger for your vehicle, electrical system, and budget.',
+  },
+  {
+    title: 'Do You Need an Electrical Panel Upgrade for Your EV Charger?',
+    slug: 'electrical-panel-upgrade-ev-charger-bay-area-guide',
+    date: '2026-03-21',
+    excerpt: 'A Bay Area homeowner\'s guide to determining if your electrical panel can handle EV charging — and what to do if it can\'t.',
+  },
+  {
+    title: 'Tesla Wall Connector vs. Other Level 2 EV Chargers',
+    slug: 'tesla-wall-connector-vs-level-2-ev-chargers-bay-area',
+    date: '2026-03-21',
+    excerpt: 'Comparing the Tesla Wall Connector against ChargePoint, Grizzl-E, JuiceBox, and other top Level 2 chargers for Bay Area homes.',
+  },
+  {
+    title: 'How Much Does EV Charger Installation Cost in the Bay Area?',
+    slug: 'ev-charger-installation-cost-bay-area-2026',
+    date: '2026-03-21',
+    excerpt: 'A detailed breakdown of EV charger installation costs in 2026 — what affects pricing and how to budget for your project.',
+  },
+  {
+    title: 'Level 1 vs Level 2 vs Level 3 EV Charging: Which Do You Need?',
+    slug: 'level-1-vs-level-2-vs-level-3-ev-charging',
+    date: '2026-03-21',
+    excerpt: 'Understanding the differences between EV charging levels, speeds, costs, and which level is right for your daily driving needs.',
+  },
+  {
+    title: 'How to Prepare Your Home for EV Charger Installation',
+    slug: 'prepare-home-ev-charger-installation-checklist',
+    date: '2026-03-21',
+    excerpt: 'A step-by-step checklist to get your home ready for EV charger installation — from panel checks to garage prep.',
+  },
+];
+---
+
+<Base
+  title="Blog"
+  description="Expert guides on EV charger installation, panel upgrades, rebates, and charging technology. Bay Area EV charging insights from licensed electricians."
+>
+  <section class="py-16 bg-gradient-to-br from-primary-dark via-primary to-primary-light text-white">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Blog</h1>
+      <p class="text-white/80 text-lg">Expert guides on EV charging for Bay Area homeowners</p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="space-y-8">
+        {posts.map((post) => (
+          <article class="border-b border-gray-100 pb-8">
+            <a href={`/blog/${post.slug}/`} class="group">
+              <time class="text-sm text-gray">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+              <h2 class="text-xl font-bold mt-1 group-hover:text-primary transition-colors">{post.title}</h2>
+              <p class="text-gray mt-2">{post.excerpt}</p>
+              <span class="inline-block mt-3 text-primary font-semibold text-sm">Read more →</span>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
