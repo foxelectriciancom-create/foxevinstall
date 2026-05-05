@@ -1,16 +1,4 @@
-interface Env {
-  RESEND_API_KEY: string;
-  CONTACT_EMAIL: string;
-}
-
-interface ContactForm {
-  first_name: string;
-  last_name: string;
-  email: string;
-  message?: string;
-}
-
-function escapeHtml(str: string): string {
+function escapeHtml(str) {
   return str
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
@@ -18,7 +6,7 @@ function escapeHtml(str: string): string {
     .replace(/"/g, '&quot;');
 }
 
-export const onRequestPost: PagesFunction<Env> = async (context) => {
+export async function onRequestPost(context) {
   const headers = {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': 'https://foxevinstall.com',
@@ -27,11 +15,11 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   try {
     const formData = await context.request.formData();
 
-    const data: ContactForm = {
-      first_name: (formData.get('first_name') as string || '').trim(),
-      last_name: (formData.get('last_name') as string || '').trim(),
-      email: (formData.get('email') as string || '').trim(),
-      message: (formData.get('message') as string || '').trim(),
+    const data = {
+      first_name: (formData.get('first_name') || '').trim(),
+      last_name: (formData.get('last_name') || '').trim(),
+      email: (formData.get('email') || '').trim(),
+      message: (formData.get('message') || '').trim(),
     };
 
     if (!data.first_name || !data.last_name || !data.email) {
@@ -92,9 +80,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       { status: 500, headers }
     );
   }
-};
+}
 
-export const onRequestOptions: PagesFunction = async () => {
+export async function onRequestOptions() {
   return new Response(null, {
     headers: {
       'Access-Control-Allow-Origin': 'https://foxevinstall.com',
@@ -102,4 +90,4 @@ export const onRequestOptions: PagesFunction = async () => {
       'Access-Control-Allow-Headers': 'Content-Type',
     },
   });
-};
+}
