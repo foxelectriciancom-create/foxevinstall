@@ -1,0 +1,112 @@
+---
+import Base from '../../layouts/Base.astro';
+import CTA from '../../components/CTA.astro';
+---
+
+<Base
+  title="How to Choose the Right EV Charger for Your Home"
+  description="A complete buyer's guide to selecting the best Level 2 EV charger for your vehicle, electrical system, and budget. Compare top brands and features."
+>
+  <section class="relative overflow-hidden py-20 md:py-24">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/images/hero-circuit.webp')">
+      <div class="absolute inset-0 bg-black/60"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 text-center text-white">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">How to Choose the Right EV Charger for Your Home</h1>
+      <p class="text-white/80 text-lg">A complete buyer's guide for Bay Area homeowners</p>
+    </div>
+  </section>
+
+  <article class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <a href="/blog/" class="inline-flex items-center text-primary font-semibold mb-8 hover:underline">&larr; Back to Blog</a>
+      <time class="block text-sm text-gray mb-6">March 21, 2026</time>
+
+      <div class="space-y-6 text-gray leading-relaxed">
+        <p class="text-lg text-dark font-medium">
+          Selecting a home EV charger involves more than just picking a brand. Your vehicle type, daily driving distance, electrical panel capacity, garage layout, and future plans all factor into the decision. This guide walks you through every consideration so you can make a confident purchase.
+        </p>
+
+        <h2 class="text-2xl font-bold text-dark pt-4">Understanding Charging Power: Amps and Kilowatts</h2>
+        <p>
+          Level 2 home chargers operate on 240V circuits and come in different amperage ratings, which directly determine charging speed. The most common options are:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>16A (3.8 kW)</strong> — Adds roughly 12-15 miles of range per hour. Adequate for plug-in hybrids or very light daily driving.</li>
+          <li><strong>32A (7.7 kW)</strong> — Adds roughly 25 miles of range per hour. Suitable for most EVs with moderate daily commutes.</li>
+          <li><strong>40A (9.6 kW)</strong> — Adds roughly 30 miles of range per hour. The sweet spot for most battery-electric vehicles.</li>
+          <li><strong>48A (11.5 kW)</strong> — Adds roughly 37 miles of range per hour. Maximum speed for vehicles that can accept it (Tesla, Rivian, newer EVs).</li>
+        </ul>
+        <p>
+          Keep in mind that your vehicle's onboard charger limits the maximum intake. A Tesla Model 3 can accept up to 48A, while a Chevy Bolt maxes out at 32A regardless of what charger you install. Check your vehicle's specifications before buying.
+        </p>
+
+        <h2 class="text-2xl font-bold text-dark pt-4">Hardwired vs. Plug-In Installation</h2>
+        <p>
+          EV chargers come in two installation types:
+        </p>
+        <p>
+          <strong>Plug-in (NEMA 14-50 outlet):</strong> The charger plugs into a dedicated 240V outlet, similar to a dryer outlet. Advantages include portability (you can take it when you move) and easier replacement. Limited to 40A on a 50A circuit due to the 80% continuous load rule.
+        </p>
+        <p>
+          <strong>Hardwired:</strong> The charger is permanently wired directly to your electrical panel. Allows for higher amperage (up to 60A circuits for 48A chargers), cleaner appearance, and is required by some charger models. Slightly higher installation cost but offers maximum charging speed.
+        </p>
+        <p>
+          For most Bay Area homeowners, we recommend hardwired installation for 48A chargers and plug-in for 40A or lower. Our standard EV charger installation from $799 covers both options.
+        </p>
+
+        <h2 class="text-2xl font-bold text-dark pt-4">Top Charger Brands Compared</h2>
+
+        <h3 class="text-xl font-bold text-dark pt-2">Tesla Wall Connector ($450-$500)</h3>
+        <p>
+          The Tesla Wall Connector delivers up to 48A and integrates seamlessly with the Tesla app and home energy ecosystem (Powerwall, Solar). It features a sleek design, built-in WiFi, and power sharing between multiple units. While it works with non-Tesla vehicles via the included J1772 adapter, it is optimized for Tesla owners.
+        </p>
+
+        <h3 class="text-xl font-bold text-dark pt-2">ChargePoint Home Flex ($550-$650)</h3>
+        <p>
+          The ChargePoint Home Flex is the most versatile option on the market. It supports adjustable amperage from 16A to 50A (on a 60A circuit), works with every EV brand, offers excellent app connectivity with energy usage tracking, and can be either hardwired or plugged in. It also integrates with Amazon Alexa and Google Home for voice-controlled scheduling.
+        </p>
+
+        <h3 class="text-xl font-bold text-dark pt-2">Grizzl-E ($400-$450)</h3>
+        <p>
+          A rugged, no-frills charger made in North America. The Grizzl-E delivers reliable 40A charging with a NEMA 4 weatherproof rating that makes it suitable for outdoor installation. It lacks WiFi and smart features but offers exceptional durability and value. The Grizzl-E Smart variant adds WiFi and scheduling for about $50 more.
+        </p>
+
+        <h3 class="text-xl font-bold text-dark pt-2">JuiceBox 48A ($600-$650)</h3>
+        <p>
+          The Enel X JuiceBox offers 48A charging with a strong app experience, energy usage monitoring, and integration with time-of-use utility rates. It can automatically shift charging to off-peak hours on PG&E's EV-2A rate plan, potentially saving Bay Area homeowners $50-$100 per month on electricity.
+        </p>
+
+        <h3 class="text-xl font-bold text-dark pt-2">Enphase IQ EV Charger ($1,200-$1,400)</h3>
+        <p>
+          A premium option designed for homes with Enphase solar systems. It integrates directly with Enphase microinverters and batteries, enabling solar-powered EV charging and intelligent energy management. The higher price point is justified for homeowners already invested in the Enphase ecosystem.
+        </p>
+
+        <h3 class="text-xl font-bold text-dark pt-2">Autel MaxiCharger ($500-$600)</h3>
+        <p>
+          A newer entrant offering 50A output, a built-in holster, and a large LED status ring. The Autel MaxiCharger supports both NEMA 14-50 plug-in and hardwired installation, features robust WiFi connectivity, and qualifies for most rebate programs. It has gained a strong reputation for reliability.
+        </p>
+
+        <h2 class="text-2xl font-bold text-dark pt-4">Key Features to Consider</h2>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Cable length:</strong> Standard is 25 feet. If your parking spot is far from your panel, consider models with longer cables or plan for a longer wire run.</li>
+          <li><strong>WiFi connectivity:</strong> Enables remote monitoring, scheduled charging for off-peak rates, and firmware updates.</li>
+          <li><strong>Weather rating:</strong> If installing outdoors, look for NEMA 4 or higher rating. Most chargers are rated for outdoor use, but verify before purchasing.</li>
+          <li><strong>Energy Star certification:</strong> Some programs and rebates require Energy Star certified chargers.</li>
+          <li><strong>Cable management:</strong> Built-in holsters and cable wraps keep your garage organized.</li>
+          <li><strong>Future-proofing:</strong> Consider a 48A charger even if your current vehicle only accepts 32A — your next vehicle may take advantage of the extra speed.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-dark pt-4">Our Recommendation</h2>
+        <p>
+          For most Bay Area homeowners, the ChargePoint Home Flex or Tesla Wall Connector (for Tesla owners) offers the best combination of features, reliability, and value. If budget is the primary concern, the Grizzl-E provides dependable charging at a lower price point.
+        </p>
+        <p>
+          Not sure which charger fits your situation? Schedule a free consultation with Fox EV Install. We assess your electrical system, discuss your driving habits, and recommend the optimal charger for your needs. We install all major brands with our standard installation starting at $799.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <CTA title="Need Help Choosing Your EV Charger?" subtitle="Free consultation includes electrical assessment and personalized recommendation" />
+</Base>

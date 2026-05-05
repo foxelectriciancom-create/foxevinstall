@@ -1,0 +1,106 @@
+---
+import Base from '../../layouts/Base.astro';
+import CTA from '../../components/CTA.astro';
+---
+
+<Base
+  title="Do You Need an Electrical Panel Upgrade for Your EV Charger?"
+  description="A Bay Area homeowner's guide to determining if your electrical panel can handle EV charging — and what to do if it can't. Panel upgrades from $2,800."
+>
+  <section class="relative overflow-hidden py-20 md:py-24">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/images/hero-circuit.webp')">
+      <div class="absolute inset-0 bg-black/60"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 text-center text-white">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Do You Need an Electrical Panel Upgrade for Your EV Charger?</h1>
+      <p class="text-white/80 text-lg">A Bay Area homeowner's guide to panel capacity and EV charging</p>
+    </div>
+  </section>
+
+  <article class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <a href="/blog/" class="inline-flex items-center text-primary font-semibold mb-8 hover:underline">&larr; Back to Blog</a>
+      <time class="block text-sm text-gray mb-6">March 21, 2026</time>
+
+      <div class="space-y-6 text-gray leading-relaxed">
+        <p class="text-lg text-dark font-medium">
+          One of the most common questions we hear from Bay Area homeowners is whether their electrical panel can support an EV charger. The answer depends on your panel's amperage rating, current load, available space, and age. About 30-40% of homes in the Bay Area need some form of electrical upgrade before installing a Level 2 charger. Here is how to assess your situation.
+        </p>
+
+        <h2 class="text-2xl font-bold text-dark pt-4">Understanding Your Electrical Panel</h2>
+        <p>
+          Your electrical panel (also called a breaker box or load center) is the central distribution point for all electricity in your home. It has a total amperage rating — typically 100A, 125A, 150A, or 200A for residential properties — that represents the maximum power your home can draw at any given time.
+        </p>
+        <p>
+          A Level 2 EV charger requires a dedicated 240V circuit, typically 40A to 60A depending on the charger's amperage rating. Using the National Electrical Code's 80% continuous load rule, a 48A charger needs a 60A breaker, and a 40A charger needs a 50A breaker.
+        </p>
+
+        <h2 class="text-2xl font-bold text-dark pt-4">Signs You Likely Need a Panel Upgrade</h2>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>100A panel:</strong> Most 100A panels cannot accommodate a Level 2 EV charger without an upgrade. After accounting for HVAC, kitchen appliances, water heater, and general loads, there is rarely enough spare capacity for a 40-60A circuit.</li>
+          <li><strong>No available breaker spaces:</strong> If your panel is full (every slot occupied), you need either a sub-panel or a full panel upgrade to add the required breaker.</li>
+          <li><strong>Outdated panel brands:</strong> Federal Pacific, Zinsco, and some older Pushmatic panels have known safety issues and should be replaced regardless of EV charging needs.</li>
+          <li><strong>Fuse box:</strong> If your home still has a fuse panel rather than circuit breakers, an upgrade is necessary for safe EV charger installation.</li>
+          <li><strong>Aluminum wiring:</strong> Homes built in the 1960s-70s may have aluminum branch wiring that requires attention during any major electrical addition.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-dark pt-4">Signs You Probably Do Not Need an Upgrade</h2>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>200A panel with available spaces:</strong> Most 200A panels have sufficient capacity for a Level 2 charger without any modification.</li>
+          <li><strong>Gas appliances:</strong> If your home uses gas for heating, cooking, and water heating, your electrical load is likely low enough to accommodate an EV charger even on a 125A or 150A panel.</li>
+          <li><strong>Recent construction:</strong> Homes built after 2010 typically have 200A panels designed to accommodate modern electrical loads including EV charging.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-dark pt-4">The Load Calculation Process</h2>
+        <p>
+          Before any installation, our electricians perform a load calculation per NEC Article 220. This involves:
+        </p>
+        <ol class="list-decimal pl-6 space-y-2">
+          <li>Documenting your panel's total amperage rating and main breaker size</li>
+          <li>Inventorying all existing circuits and their amperage ratings</li>
+          <li>Calculating the total connected load using NEC demand factors</li>
+          <li>Determining available capacity for the proposed EV charger circuit</li>
+          <li>Verifying that the service entrance (wires from the street to your panel) can handle the additional load</li>
+        </ol>
+        <p>
+          If the calculation shows insufficient capacity, we discuss your options. Sometimes a simple circuit consolidation or a load management device can free up enough capacity without a full panel upgrade.
+        </p>
+
+        <h2 class="text-2xl font-bold text-dark pt-4">Panel Upgrade Options and Costs</h2>
+
+        <h3 class="text-xl font-bold text-dark pt-2">Full Panel Upgrade (from $2,800)</h3>
+        <p>
+          Replacing your entire electrical panel with a new, higher-capacity unit. Most commonly this means upgrading from 100A to 200A. This provides ample capacity for EV charging, future electrical additions (heat pumps, induction cooktops, additional EVs), and brings your panel up to current code standards. Timeline: typically 1-2 days plus permit and utility coordination.
+        </p>
+
+        <h3 class="text-xl font-bold text-dark pt-2">Sub-Panel Installation (from $1,500)</h3>
+        <p>
+          If your main panel has sufficient amperage but no available breaker spaces, a sub-panel provides additional circuit capacity. The sub-panel is fed from a breaker in your main panel and can accommodate your EV charger circuit plus other future needs. This is less expensive than a full upgrade but does not increase your total available amperage.
+        </p>
+
+        <h3 class="text-xl font-bold text-dark pt-2">Load Management Device (from $300-500 added to installation)</h3>
+        <p>
+          Smart load management devices like the DCC-9 or Span Panel monitor your home's real-time electrical usage and dynamically allocate power to your EV charger when other loads are low. This can allow a 48A charger to operate on a panel that would otherwise be overloaded, without requiring a full upgrade. The charger may throttle during peak household usage, but for overnight charging this rarely matters.
+        </p>
+
+        <h2 class="text-2xl font-bold text-dark pt-4">Bay Area Permitting Considerations</h2>
+        <p>
+          Panel upgrades in the Bay Area require both an electrical permit and coordination with PG&E for the service entrance. Permit requirements vary by city — San Francisco, Oakland, San Jose, and each peninsula city have their own building departments with different timelines. Most jurisdictions process electrical permits within 1-2 weeks.
+        </p>
+        <p>
+          PG&E coordination is needed when upgrading from 100A to 200A service because the utility must upgrade the service drop (the wires from the pole or transformer to your home) and potentially the meter base. This can add 2-4 weeks to the project timeline but Fox EV Install handles all coordination on your behalf.
+        </p>
+
+        <h2 class="text-2xl font-bold text-dark pt-4">Making the Decision</h2>
+        <p>
+          The simplest path is to schedule a free consultation. Our licensed electricians evaluate your panel on-site, perform the load calculation, and give you a clear answer within 24 hours. If an upgrade is needed, we provide a detailed quote that includes all permitting, utility coordination, and the EV charger installation itself.
+        </p>
+        <p>
+          Keep in mind that a panel upgrade is an investment that increases your home's value and electrical capacity for decades. With California's push toward electrification (heat pump water heaters, induction cooking, EV charging), a 200A panel is increasingly considered standard for modern homes.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <CTA title="Not Sure About Your Panel? Get a Free Assessment" subtitle="Our licensed electricians evaluate your panel and provide a clear recommendation" />
+</Base>
