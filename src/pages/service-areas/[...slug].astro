@@ -34,7 +34,7 @@ const { area } = Astro.props;
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/contact/" class="inline-flex items-center justify-center bg-accent hover:bg-accent-dark text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors">
-          Get a Free Quote
+          Get a Quote
         </a>
         <a href={`tel:${site.phoneRaw}`} class="inline-flex items-center justify-center border-2 border-white/30 hover:border-white text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors">
           Call {site.phone}
@@ -80,7 +80,7 @@ const { area } = Astro.props;
             `${area.city} city permit and inspection included`,
             '100A to 200A and 400A panel upgrades',
             'Dedicated 240V circuits sized for your charger',
-            'Free consultation with 24-hour quote',
+            '$200 consultation applied toward your project',
           ].map((item) => (
             <li class="flex items-start gap-3">
               <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -115,5 +115,5 @@ const { area } = Astro.props;
     </div>
   </section>
 
-  <CTA title={`Ready for EV Charging in ${area.city}?`} subtitle="Free quote — most installations scheduled within one week" />
+  <CTA title={`Ready for EV Charging in ${area.city}?`} subtitle="Get a quote — most installations scheduled within one week" />
 </Base>

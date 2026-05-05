@@ -6,7 +6,7 @@ interface Props {
   subtitle?: string;
 }
 
-const { title = 'Ready to Get Started?', subtitle = 'Schedule your free consultation today' } = Astro.props;
+const { title = 'Ready to Get Started?', subtitle = 'Schedule your consultation today' } = Astro.props;
 ---
 
 <section class="py-16 bg-primary text-white">
@@ -19,7 +19,7 @@ const { title = 'Ready to Get Started?', subtitle = 'Schedule your free consulta
         href="/contact/"
         class="inline-flex items-center justify-center bg-accent hover:bg-accent-dark text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors"
       >
-        Get a Free Quote
+        Get a Quote
       </a>
       <a
         href={`tel:${site.phoneRaw}`}
