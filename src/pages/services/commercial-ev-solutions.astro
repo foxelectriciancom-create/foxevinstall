@@ -79,16 +79,15 @@ import CTA from '../../components/CTA.astro';
       <h3 class="text-xl font-bold mb-4">Financial Incentives</h3>
       <div class="space-y-4 mb-12">
         {[
-          { name: 'CALeVIP', amount: 'Up to $6,500 per Level 2 charger' },
-          { name: 'Federal Tax Credit (30C)', amount: 'Up to 30% of costs (max $100,000)' },
+          { name: 'Federal Tax Credit (Section 30C)', amount: 'Up to 30% of costs (max $100,000 commercial)' },
           { name: 'PG&E EV Charge Network', amount: 'Multi-unit residential rebates' },
-          { name: 'BAAQMD', amount: 'Workplace charging grants' },
         ].map((incentive) => (
           <div class="flex justify-between items-center bg-light rounded-lg p-4">
             <span class="font-medium text-dark">{incentive.name}</span>
             <span class="text-primary font-semibold text-sm">{incentive.amount}</span>
           </div>
         ))}
+        <p class="text-gray text-xs mt-2">Federal 30C credit requires installation in an eligible census tract. Check with your tax advisor for qualification details.</p>
       </div>
 
       <!-- Load Management -->
