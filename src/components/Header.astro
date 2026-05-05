@@ -11,7 +11,7 @@ import { site, nav } from '../data/site';
         <a href={`tel:${site.phoneRaw}`} class="hover:text-accent transition-colors">
           {site.phone}
         </a>
-        <span class="hidden md:inline">{site.hours.weekday}</span>
+        <span class="hidden md:inline">{site.hours.weekday} | {site.hours.saturday}</span>
       </div>
     </div>
   </div>
