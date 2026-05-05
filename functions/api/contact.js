@@ -1,93 +1,69 @@
-function escapeHtml(str) {
-  return str
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
-}
+export async function onRequest(context) {
+  if (context.request.method === "OPTIONS") {
+    return new Response(null, {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type",
+      },
+    });
+  }
 
-export async function onRequestPost(context) {
-  const headers = {
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': 'https://foxevinstall.com',
-  };
+  if (context.request.method !== "POST") {
+    return new Response(JSON.stringify({ success: false, error: "Method not allowed" }), {
+      status: 405,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+
+  var headers = { "Content-Type": "application/json" };
 
   try {
-    const formData = await context.request.formData();
+    var formData = await context.request.formData();
+    var firstName = (formData.get("first_name") || "").trim();
+    var lastName = (formData.get("last_name") || "").trim();
+    var email = (formData.get("email") || "").trim();
+    var message = (formData.get("message") || "").trim();
 
-    const data = {
-      first_name: (formData.get('first_name') || '').trim(),
-      last_name: (formData.get('last_name') || '').trim(),
-      email: (formData.get('email') || '').trim(),
-      message: (formData.get('message') || '').trim(),
-    };
-
-    if (!data.first_name || !data.last_name || !data.email) {
+    if (!firstName || !lastName || !email) {
       return new Response(
-        JSON.stringify({ success: false, error: 'Please fill in all required fields.' }),
-        { status: 400, headers }
+        JSON.stringify({ success: false, error: "Please fill in all required fields." }),
+        { status: 400, headers: headers }
       );
     }
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
-      return new Response(
-        JSON.stringify({ success: false, error: 'Please enter a valid email address.' }),
-        { status: 400, headers }
-      );
-    }
+    var toEmail = context.env.CONTACT_EMAIL || "info@foxevinstall.com";
 
-    const toEmail = context.env.CONTACT_EMAIL || 'info@foxevinstall.com';
-
-    const emailResponse = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
+    var res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
       headers: {
-        'Authorization': `Bearer ${context.env.RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
+        "Authorization": "Bearer " + context.env.RESEND_API_KEY,
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: 'Fox EV Install <noreply@foxevinstall.com>',
+        from: "Fox EV Install <noreply@foxevinstall.com>",
         to: [toEmail],
-        reply_to: data.email,
-        subject: `New Contact Form: ${data.first_name} ${data.last_name}`,
-        html: `
-          <h2>New Contact Form Submission</h2>
-          <table style="border-collapse:collapse;width:100%;max-width:500px">
-            <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee">Name</td><td style="padding:8px;border-bottom:1px solid #eee">${escapeHtml(data.first_name)} ${escapeHtml(data.last_name)}</td></tr>
-            <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee">Email</td><td style="padding:8px;border-bottom:1px solid #eee"><a href="mailto:${escapeHtml(data.email)}">${escapeHtml(data.email)}</a></td></tr>
-            <tr><td style="padding:8px;font-weight:bold;vertical-align:top">Message</td><td style="padding:8px">${data.message ? escapeHtml(data.message).replace(/\n/g, '<br>') : '<em>No message</em>'}</td></tr>
-          </table>
-        `,
+        reply_to: email,
+        subject: "New Contact Form: " + firstName + " " + lastName,
+        html: "<h2>New Contact Form Submission</h2><table style='border-collapse:collapse;width:100%;max-width:500px'><tr><td style='padding:8px;font-weight:bold;border-bottom:1px solid #eee'>Name</td><td style='padding:8px;border-bottom:1px solid #eee'>" + firstName + " " + lastName + "</td></tr><tr><td style='padding:8px;font-weight:bold;border-bottom:1px solid #eee'>Email</td><td style='padding:8px;border-bottom:1px solid #eee'>" + email + "</td></tr><tr><td style='padding:8px;font-weight:bold;vertical-align:top'>Message</td><td style='padding:8px'>" + (message || "<em>No message</em>") + "</td></tr></table>",
       }),
     });
 
-    if (!emailResponse.ok) {
-      const err = await emailResponse.text();
-      console.error('Resend API error:', err);
+    if (!res.ok) {
       return new Response(
-        JSON.stringify({ success: false, error: 'Failed to send message. Please try calling us.' }),
-        { status: 500, headers }
+        JSON.stringify({ success: false, error: "Failed to send message. Please try calling us." }),
+        { status: 500, headers: headers }
       );
     }
 
     return new Response(
       JSON.stringify({ success: true }),
-      { status: 200, headers }
+      { status: 200, headers: headers }
     );
-  } catch (err) {
-    console.error('Contact form error:', err);
+  } catch (e) {
     return new Response(
-      JSON.stringify({ success: false, error: 'Something went wrong. Please try calling us.' }),
-      { status: 500, headers }
+      JSON.stringify({ success: false, error: "Something went wrong. Please try calling us." }),
+      { status: 500, headers: headers }
     );
   }
-}
-
-export async function onRequestOptions() {
-  return new Response(null, {
-    headers: {
-      'Access-Control-Allow-Origin': 'https://foxevinstall.com',
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
-    },
-  });
 }
