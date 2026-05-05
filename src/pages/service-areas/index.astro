@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import PageHero from '../../components/PageHero.astro';
 import CTA from '../../components/CTA.astro';
 import { serviceAreas, regions } from '../../data/serviceAreas';
+import { site } from '../../data/site';
 ---
 
 <Base
@@ -43,6 +44,11 @@ import { serviceAreas, regions } from '../../data/serviceAreas';
             </ul>
           </div>
         ))}
+      </div>
+
+      <div class="text-center mt-12 space-y-2">
+        <p class="text-gray text-sm">We're constantly expanding our service coverage across the Bay Area.</p>
+        <p class="text-gray text-sm">Don't see your city? We likely serve your area too! <a href="/contact/" class="text-primary font-semibold hover:underline">Contact us</a> or call <a href={`tel:${site.phoneRaw}`} class="text-primary font-semibold">{site.phone}</a></p>
       </div>
     </div>
   </section>
