@@ -37,11 +37,19 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, site.url).href;
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- Fonts -->
+  <!-- Fonts (non-blocking) -->
   <link
+    rel="preload"
+    as="style"
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
+    onload="this.onload=null;this.rel='stylesheet'"
   />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </noscript>
+
+  <!-- LCP preload -->
+  <link rel="preload" as="image" type="image/webp" href="/images/hero-ev-charger.webp" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
