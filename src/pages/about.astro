@@ -1,78 +1,83 @@
 ---
 import Base from '../layouts/Base.astro';
-import Hero from '../components/Hero.astro';
+import PageHero from '../components/PageHero.astro';
 import CTA from '../components/CTA.astro';
 import { site } from '../data/site';
 ---
 
 <Base
-  title="About Us"
+  title="About Fox EV Install | Licensed Bay Area Electrician"
   description="Licensed C-10 electrical contractor specializing in EV charger installation. Bay Area's dedicated EV charging experts serving 29+ cities."
 >
-  <Hero
-    title="About Fox EV Install"
-    subtitle="Bay Area's Dedicated EV Charging Experts"
+  <PageHero
+    title="Meet Our Team"
+    label="Leadership"
   />
 
   <section class="py-16">
-    <div class="max-w-4xl mx-auto px-4">
-      <p class="text-lg text-gray leading-relaxed mb-8">
-        Fox EV Install was founded to solve a simple problem: Bay Area homeowners buying electric vehicles couldn't find electricians who truly understood EV charging infrastructure.
-      </p>
-      <p class="text-gray leading-relaxed mb-12">
-        As a licensed C-10 electrical contractor, we specialize exclusively in EV charger installation and electrical panel upgrades — delivering code-compliant solutions for homeowners and businesses across the San Francisco Bay Area.
-      </p>
-
-      <!-- Mission -->
-      <div class="bg-primary/5 border-l-4 border-primary rounded-r-xl p-6 mb-12">
-        <h2 class="font-bold text-lg mb-2">Our Mission</h2>
-        <p class="text-gray leading-relaxed">
-          To make EV charging accessible to every Bay Area homeowner and business — through honest pricing, expert installation, and a commitment to doing every job right the first time.
-        </p>
-      </div>
-
-      <!-- Differentiators -->
-      <h2 class="text-2xl font-bold mb-6">What Makes Us Different</h2>
-      <div class="space-y-6 mb-12">
-        {[
-          { title: 'EV Charging Specialists', desc: 'This is all we do. No general electrical, no HVAC, no plumbing. 100% focused on EV charging infrastructure.' },
-          { title: 'Full Permit Support', desc: 'We handle every city permit, coordinate inspections, and ensure your installation passes on the first visit.' },
-          { title: 'Panel & Infrastructure Experts', desc: '200A and 400A upgrades, load calculations, and full infrastructure design for multi-charger setups.' },
-          { title: 'Residential & Commercial', desc: 'From single-family homes to apartment complexes and corporate campuses — we scale to any project.' },
-          { title: 'Local Bay Area Team', desc: `Based in San Carlos, serving ${site.citiesServed} cities across the Peninsula and South Bay.` },
-        ].map((item) => (
-          <div class="flex gap-4">
-            <div class="shrink-0 w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-              <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-bold mb-1">{item.title}</h3>
-              <p class="text-gray text-sm">{item.desc}</p>
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+        <div class="md:col-span-1">
+          <div class="bg-dark rounded-xl overflow-hidden aspect-[3/4] flex items-end p-6">
+            <div class="text-white">
+              <p class="font-bold text-lg">Fox EV Install</p>
+              <p class="text-white/70 text-sm">Licensed C-10 Electricians</p>
             </div>
           </div>
-        ))}
+        </div>
+        <div class="md:col-span-2 space-y-5 text-gray leading-relaxed">
+          <p>Fox EV Install was founded to solve a simple problem: Bay Area homeowners buying electric vehicles couldn't find electricians who truly understood EV charging infrastructure.</p>
+          <p>General electricians often over-quote the work, use incorrect wire sizing, or don't understand the specific requirements of different charger brands. We built our entire company around this one specialty — and it shows in the quality and efficiency of our work.</p>
+          <p>Every installation starts with a thorough assessment of your electrical system. Not a quick glance at your panel, but a proper load calculation, wire run measurement, and evaluation of your home's electrical capacity. We provide detailed, written quotes with no hidden fees. The price we quote is the price you pay.</p>
+          <p>We pull permits for every job, even when customers say they don't need one. California requires permits for EV charger installations, and cutting corners on permitting can create problems when you sell your home, file an insurance claim, or apply for utility rebates. We handle the entire permit process — you don't have to deal with the city at all.</p>
+          <p>Our focus on EV charging means we've seen every possible installation scenario — from 1960s Eichler homes in Palo Alto to new construction in San Jose, from attached garages with panels nearby to detached garages requiring 100+ foot wire runs. We handle it all.</p>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Credentials -->
-      <h2 class="text-2xl font-bold mb-6">Credentials</h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+  <section class="py-16 bg-light">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-10">What Makes Us Different</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
-          'California C-10 Licensed',
-          'Fully Insured',
-          'EV Charging Certified',
-          'Permits Included',
-          '5.0 Google Rating',
-          `${site.citiesServed} Cities Served`,
-        ].map((cred) => (
-          <div class="bg-light rounded-lg p-4 text-center text-sm font-medium text-dark">
-            {cred}
+          { title: 'EV charging specialists', desc: "We don't install ceiling fans or rewire kitchens. EV charging is all we do — this deep focus means faster, better installations.", icon: '⚡' },
+          { title: 'Full permit support', desc: "City permit submissions, PG&E coordination, and inspections all handled — you don't deal with the city at all.", icon: '📋' },
+          { title: 'Panel & infrastructure experts', desc: '200A/400A upgrades, dedicated circuits, load calculations, and proper wire sizing for any home or business.', icon: '🔧' },
+          { title: 'Residential & commercial', desc: 'Single-family homes, apartments, condos, offices, and retail — we handle every property type in the Bay Area.', icon: '🏢' },
+          { title: 'Local Bay Area team', desc: `Based in San Carlos, serving ${site.citiesServed} cities. Same-week scheduling and fast response across the Peninsula and South Bay.`, icon: '📍' },
+        ].map((item) => (
+          <div class="bg-white rounded-xl p-6 shadow-sm">
+            <div class="text-2xl mb-3">{item.icon}</div>
+            <h3 class="font-bold text-dark mb-2">{item.title}</h3>
+            <p class="text-gray text-sm leading-relaxed">{item.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <CTA />
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-6">Our Mission</h2>
+      <p class="text-gray text-lg leading-relaxed mb-8">
+        To make EV charging accessible to every Bay Area homeowner and business — through honest pricing, expert installation, and a commitment to doing every job right the first time.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        {[
+          { icon: '🛡️', text: 'California C-10 Licensed Contractor' },
+          { icon: '✅', text: 'Fully Insured' },
+          { icon: '⚡', text: 'EV Charging Specialists' },
+          { icon: '📋', text: 'Permit & Inspection Included' },
+          { icon: '⭐', text: '5.0 Google Rating' },
+        ].map((badge) => (
+          <span class="inline-flex items-center gap-2 bg-light border border-gray-200 rounded-full px-4 py-2 text-sm font-medium text-dark">
+            <span>{badge.icon}</span> {badge.text}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTA title="Schedule Service" subtitle="Get a free consultation for your EV charging project" />
 </Base>

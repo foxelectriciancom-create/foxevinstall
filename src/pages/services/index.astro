@@ -1,65 +1,116 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Hero from '../../components/Hero.astro';
-import ServiceCard from '../../components/ServiceCard.astro';
+import PageHero from '../../components/PageHero.astro';
 import CTA from '../../components/CTA.astro';
+
+const services = [
+  {
+    title: 'EV Charger Installation',
+    link: 'Level 2 Home & Commercial Chargers',
+    price: 'From $799',
+    description: 'Level 2 home and commercial EV charger installation — Tesla, ChargePoint, Enphase, JuiceBox, and all major brands. Permit to final inspection included.',
+    href: '/services/ev-charger-installation/',
+    gradient: 'from-blue-600 to-blue-800',
+    icon: `<svg class="w-8 h-8 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`,
+  },
+  {
+    title: 'Electrical Panel Upgrade',
+    link: '200A & 400A Service Upgrades',
+    price: 'From $2,800',
+    description: 'Upgrade your panel to support EV charging. 100A to 200A or 400A service upgrades, circuit breaker replacement, and full load calculations.',
+    href: '/services/electrical-panel-upgrade/',
+    gradient: 'from-slate-500 to-slate-700',
+    icon: `<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>`,
+  },
+  {
+    title: 'Dedicated EV Circuit',
+    link: '240V Dedicated Circuits',
+    price: 'From $499',
+    description: 'A dedicated 240V circuit for Level 2 EV charging. NEMA 14-50 outlets, hardwired connections, proper wire gauge and breaker sizing.',
+    href: '/services/dedicated-circuits/',
+    gradient: 'from-violet-600 to-violet-800',
+    icon: `<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707" /></svg>`,
+  },
+  {
+    title: 'Residential EV Solutions',
+    link: 'Multi-Unit & Business Charging',
+    price: 'Custom Quote',
+    description: 'Multi-unit EV charging for businesses, HOAs, apartments, and parking structures. Design, installation, and maintenance at scale.',
+    href: '/services/commercial-ev-solutions/',
+    gradient: 'from-blue-700 to-blue-900',
+    icon: `<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>`,
+  },
+  {
+    title: 'Load Calculation & Assessment',
+    link: 'Electrical Load Analysis',
+    price: 'Included with Install',
+    description: 'Thorough electrical load analysis before every installation. We evaluate panel capacity, wire runs, and determine the optimal charging setup for your property.',
+    href: '/contact/',
+    gradient: 'from-blue-600 to-indigo-800',
+    icon: `<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>`,
+  },
+  {
+    title: 'Permit & Inspection Support',
+    link: 'Full Permit & Code Compliance',
+    price: 'Included with Install',
+    description: 'We handle the entire permit process — city submissions, PG&E coordination, and final inspections. Every installation is code-compliant and properly documented.',
+    href: '/contact/',
+    gradient: 'from-slate-700 to-slate-900',
+    icon: `<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>`,
+  },
+];
+
+const whyChoose = [
+  { title: 'Licensed & Insured', desc: 'California C-10 licensed electrical contractor. Fully insured with liability and workers\' comp coverage on every job.', icon: '🛡️' },
+  { title: '5.0 Google Rating', desc: 'Perfect 5-star rating from Bay Area homeowners and businesses. Quality workmanship and exceptional service.', icon: '⭐' },
+  { title: 'Permits Included', desc: 'We pull all required permits and schedule city inspections. Every installation done to code and properly documented.', icon: '📋' },
+  { title: 'Transparent Pricing', desc: 'Detailed upfront quotes with no hidden fees. The price we quote is the price you pay — no surprises.', icon: '💰' },
+];
 ---
 
 <Base
-  title="Services"
-  description="EV charger installation, electrical panel upgrades, dedicated circuits, and commercial EV solutions. Licensed C-10 contractor serving the Bay Area."
+  title="EV Charging Services Bay Area"
+  description="Professional EV charger installation, electrical panel upgrades, dedicated circuits, and commercial EV solutions. Licensed C-10 contractor serving the Bay Area."
 >
-  <Hero
-    title="Our Services"
-    subtitle="Complete EV Charging Solutions"
+  <PageHero
+    title="EV Charging & Electrical Services"
+    subtitle="Professional EV charger installation and electrical services for homes and businesses across the San Francisco Bay Area. Licensed C-10 contractor — every job fully permitted and inspected."
+    label="Services"
   />
 
   <section class="py-16">
+    <div class="max-w-5xl mx-auto px-4 space-y-10">
+      {services.map((svc) => (
+        <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+          <div class={`bg-gradient-to-r ${svc.gradient} p-5 flex items-center gap-4`}>
+            <Fragment set:html={svc.icon} />
+            <a href={svc.href} class="text-white font-semibold hover:underline">{svc.link}</a>
+          </div>
+          <div class="p-6">
+            <p class="text-primary font-bold text-sm mb-1">{svc.price}</p>
+            <h3 class="text-xl font-bold text-dark mb-2">{svc.title}</h3>
+            <p class="text-gray text-sm leading-relaxed mb-4">{svc.description}</p>
+            <a href={svc.href} class="inline-flex items-center text-primary font-semibold text-sm hover:underline">
+              Learn More
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-light">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <ServiceCard
-          title="EV Charger Installation"
-          description="Professional Level 2 charger installation for your home or business. Includes site assessment, dedicated 240V circuit, mounting, testing, and city permit with inspection."
-          price="From $799"
-          href="/services/ev-charger-installation/"
-        >
-          <svg slot="icon" class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
-        </ServiceCard>
-
-        <ServiceCard
-          title="Electrical Panel Upgrade"
-          description="Upgrade from 100A to 200A or 400A service. Includes new breaker panel, meter base, PG&E coordination, circuit transfer, and full code compliance."
-          price="From $2,800"
-          href="/services/electrical-panel-upgrade/"
-        >
-          <svg slot="icon" class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-          </svg>
-        </ServiceCard>
-
-        <ServiceCard
-          title="Dedicated Circuits"
-          description="240V dedicated EV circuit with proper breaker sizing, copper wire run, conduit, NEMA outlet or hardwired connection, and city permit."
-          price="From $499"
-          href="/services/dedicated-circuits/"
-        >
-          <svg slot="icon" class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707" />
-          </svg>
-        </ServiceCard>
-
-        <ServiceCard
-          title="Commercial EV Solutions"
-          description="Multi-charger installations for offices, apartments, HOAs, retail, and fleet depots. Load management, smart charging, and utility incentive coordination."
-          price="Custom Quote"
-          href="/services/commercial-ev-solutions/"
-        >
-          <svg slot="icon" class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-          </svg>
-        </ServiceCard>
+      <h2 class="text-3xl font-bold text-center mb-10">Why Choose Fox EV Install</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {whyChoose.map((item) => (
+          <div class="bg-white rounded-xl p-6 shadow-sm text-center">
+            <div class="text-3xl mb-3">{item.icon}</div>
+            <h3 class="font-bold text-dark mb-2">{item.title}</h3>
+            <p class="text-gray text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>

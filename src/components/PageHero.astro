@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  label?: string;
+}
+
+const { title, subtitle, label } = Astro.props;
+---
+
+<section class="bg-gradient-to-br from-dark via-primary-dark to-primary text-white py-16 md:py-20">
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    {label && (
+      <span class="inline-block bg-primary/30 text-primary-light text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+        {label}
+      </span>
+    )}
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">{title}</h1>
+    {subtitle && <p class="text-white/70 text-lg max-w-2xl mx-auto">{subtitle}</p>}
+  </div>
+</section>

@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Hero from '../../components/Hero.astro';
+import PageHero from '../../components/PageHero.astro';
 import CTA from '../../components/CTA.astro';
 import { serviceAreas, regions } from '../../data/serviceAreas';
 ---
@@ -9,9 +9,10 @@ import { serviceAreas, regions } from '../../data/serviceAreas';
   title="Service Areas"
   description="EV charger installation across 29+ Bay Area cities. Peninsula, South Bay, and San Francisco. Licensed C-10 contractor with local permitting expertise."
 >
-  <Hero
+  <PageHero
     title="Service Areas"
-    subtitle="Serving 29+ Bay Area Cities"
+    subtitle="EV charger installation across 29+ Bay Area cities. Peninsula, South Bay, and San Francisco."
+    label="Coverage"
   />
 
   <section class="py-16">
