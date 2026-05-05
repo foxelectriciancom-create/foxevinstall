@@ -1,11 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
-import ServiceCard from '../components/ServiceCard.astro';
 import Testimonials from '../components/Testimonials.astro';
 import CTA from '../components/CTA.astro';
 import { site } from '../data/site';
-import { serviceAreas, regions } from '../data/serviceAreas';
+import { serviceAreas } from '../data/serviceAreas';
 ---
 
 <Base
@@ -18,177 +17,198 @@ import { serviceAreas, regions } from '../data/serviceAreas';
     price="$799"
   />
 
-  <!-- Services Section -->
+  <!-- Services Section - Bento Grid -->
   <section class="py-16">
     <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-4">Our Services</h2>
-      <p class="text-gray text-center mb-10 max-w-2xl mx-auto">
-        From simple charger installations to complete panel upgrades — we handle everything for a safe, code-compliant EV charging setup.
-      </p>
+      <p class="text-primary text-sm font-semibold uppercase tracking-wider mb-2">Services</p>
+      <h2 class="text-3xl font-bold mb-10">EV Charging Services in the Bay Area</h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <ServiceCard
-          title="EV Charger Installation"
-          description="Level 2 home & business charger installation with permit and inspection included."
-          price="From $799"
-          href="/services/ev-charger-installation/"
-        >
-          <svg slot="icon" class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
-        </ServiceCard>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+        <a href="/services/ev-charger-installation/" class="group relative block rounded-2xl overflow-hidden h-[400px]">
+          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('/images/ev-bento.jpeg')"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+          <div class="relative h-full flex flex-col justify-end p-6 md:p-8">
+            <div class="w-10 h-10 bg-white/20 backdrop-blur rounded-lg flex items-center justify-center mb-3">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-white mb-2">EV Charger Installation</h3>
+            <p class="text-white/80 text-sm mb-3">Level 2 charging from $799 — Tesla, ChargePoint, Enphase & commercial installations</p>
+            <span class="text-primary-light font-semibold text-sm">Learn More →</span>
+          </div>
+        </a>
 
-        <ServiceCard
-          title="Electrical Panel Upgrade"
-          description="100A to 200A or 400A service upgrades for modern electrical demands."
-          price="From $2,800"
-          href="/services/electrical-panel-upgrade/"
-        >
-          <svg slot="icon" class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-          </svg>
-        </ServiceCard>
+        <div class="grid grid-rows-2 gap-6">
+          <a href="/services/electrical-panel-upgrade/" class="group bg-white rounded-2xl shadow-md hover:shadow-xl p-6 md:p-8 transition-all flex items-start gap-5">
+            <div class="shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-dark group-hover:text-primary transition-colors mb-1">Electrical Panel Upgrades</h3>
+              <p class="text-gray text-sm mb-2">Panel upgrades from $2,800 — 200A/400A service upgrades for EV charging capacity</p>
+              <span class="text-primary font-semibold text-sm">Learn More →</span>
+            </div>
+          </a>
 
-        <ServiceCard
-          title="Dedicated Circuits"
-          description="240V dedicated circuit with proper breaker sizing for your EV charger."
-          price="From $499"
-          href="/services/dedicated-circuits/"
-        >
-          <svg slot="icon" class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707" />
-          </svg>
-        </ServiceCard>
-
-        <ServiceCard
-          title="Commercial EV Solutions"
-          description="Multi-charger installations for offices, apartments, and retail locations."
-          price="Custom Quote"
-          href="/services/commercial-ev-solutions/"
-        >
-          <svg slot="icon" class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-          </svg>
-        </ServiceCard>
+          <a href="/services/dedicated-circuits/" class="group bg-white rounded-2xl shadow-md hover:shadow-xl p-6 md:p-8 transition-all flex items-start gap-5">
+            <div class="shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707" /></svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-dark group-hover:text-primary transition-colors mb-1">Dedicated Circuits</h3>
+              <p class="text-gray text-sm mb-2">240V dedicated circuits from $499 — proper breaker and wire sizing for EV chargers</p>
+              <span class="text-primary font-semibold text-sm">Learn More →</span>
+            </div>
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Why Choose Us -->
-  <section class="py-16 bg-light">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-10">Why Choose Fox EV Install?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="/services/commercial-ev-solutions/" class="group relative block rounded-2xl overflow-hidden bg-primary text-white p-6 hover:bg-primary-dark transition-colors">
+          <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Residential EV Solutions</h3>
+          <p class="text-white/80 text-sm mb-3">Multi-level charging for townhouses, MDUs, and condominiums with load management.</p>
+          <span class="font-semibold text-sm text-accent">Learn More →</span>
+        </a>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="flex gap-4">
-          <div class="shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
+        <a href="/services/ev-charger-installation/#permits" class="group relative block rounded-2xl overflow-hidden bg-primary text-white p-6 hover:bg-primary-dark transition-colors">
+          <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg>
           </div>
-          <div>
-            <h3 class="font-bold mb-1">Licensed & Insured</h3>
-            <p class="text-gray text-sm">California C-10 licensed electrical contractor with full liability insurance.</p>
-          </div>
-        </div>
+          <h3 class="text-lg font-bold mb-2">Permit & Inspection</h3>
+          <p class="text-white/80 text-sm mb-3">Full permitting services. We handle all city permits, HOA coordination, and final inspections.</p>
+          <span class="font-semibold text-sm text-accent">Learn More →</span>
+        </a>
 
-        <div class="flex gap-4">
-          <div class="shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
+        <a href="/services/electrical-panel-upgrade/#load" class="group relative block rounded-2xl overflow-hidden bg-primary text-white p-6 hover:bg-primary-dark transition-colors">
+          <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
           </div>
-          <div>
-            <h3 class="font-bold mb-1">EV Specialists</h3>
-            <p class="text-gray text-sm">Exclusive focus on EV charging infrastructure — not a sideline service.</p>
-          </div>
-        </div>
+          <h3 class="text-lg font-bold mb-2">Load Calculation & Assessment</h3>
+          <p class="text-white/80 text-sm mb-3">Free electrical load assessment. We evaluate your panel capacity for the right EV charging solution.</p>
+          <span class="font-semibold text-sm text-accent">Learn More →</span>
+        </a>
+      </div>
 
-        <div class="flex gap-4">
-          <div class="shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-            </svg>
-          </div>
-          <div>
-            <h3 class="font-bold mb-1">Permits Included</h3>
-            <p class="text-gray text-sm">We handle all city permits and inspection scheduling at no extra cost.</p>
-          </div>
-        </div>
-
-        <div class="flex gap-4">
-          <div class="shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <div>
-            <h3 class="font-bold mb-1">Fast Scheduling</h3>
-            <p class="text-gray text-sm">Most installations scheduled within one week. Same-week appointments often available.</p>
-          </div>
-        </div>
-
-        <div class="flex gap-4">
-          <div class="shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-          </div>
-          <div>
-            <h3 class="font-bold mb-1">Upfront Pricing</h3>
-            <p class="text-gray text-sm">Clear, written quotes with no hidden fees. Know your total cost before we start.</p>
-          </div>
-        </div>
-
-        <div class="flex gap-4">
-          <div class="shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-            </svg>
-          </div>
-          <div>
-            <h3 class="font-bold mb-1">5.0 Rating</h3>
-            <p class="text-gray text-sm">Perfect score across Google, Facebook, and Yelp from {site.reviewCount} verified reviews.</p>
-          </div>
-        </div>
+      <div class="text-center mt-10">
+        <a href="/services/ev-charger-installation/" class="inline-flex items-center bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+          Explore All Services →
+        </a>
       </div>
     </div>
   </section>
 
   <Testimonials />
 
-  <!-- Service Areas -->
+  <!-- Contact Section -->
   <section class="py-16">
     <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-4">Service Areas</h2>
-      <p class="text-gray text-center mb-10">Serving {site.citiesServed} cities across the San Francisco Bay Area</p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div>
+          <p class="text-primary text-sm font-semibold uppercase tracking-wider mb-2">Get in Touch</p>
+          <h2 class="text-3xl font-bold mb-4">Contact Fox EV Install<br/>Bay Area's Trusted EV Electrician</h2>
+          <p class="text-gray mb-6">Licensed C-10 electrical contractor serving the San Francisco Bay Area. Free estimates for EV charger installations, panel upgrades, and dedicated circuits. Call {site.phone} or schedule online.</p>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {Object.entries(regions).map(([key, label]) => (
-          <div>
-            <h3 class="font-bold text-lg mb-3">{label}</h3>
-            <ul class="space-y-1.5">
-              {serviceAreas
-                .filter((a) => a.region === key)
-                .map((area) => (
-                  <li>
-                    <a
-                      href={`/service-areas/ev-charger-installation-${area.slug}/`}
-                      class="text-sm text-gray hover:text-primary transition-colors"
-                    >
-                      {area.city}
-                    </a>
-                  </li>
-                ))}
-            </ul>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+              <span class="text-dark">Same-Week Service Available</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+              <span class="text-dark">Licensed & Insured (C-10)</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+              <span class="text-dark">Excellent Google Stars</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+              <span class="text-dark">Quality Guarantee</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+              <span class="text-dark">Same-Day Service Available</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-light rounded-2xl p-8">
+          <div class="text-center mb-6">
+            <svg class="w-12 h-12 text-primary mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <h3 class="text-xl font-bold">Ready to Get Started?</h3>
+            <p class="text-gray text-sm mt-1">Schedule your service online — it only takes 5 minutes.</p>
           </div>
-        ))}
+          <a
+            href="/contact/"
+            class="block w-full bg-primary hover:bg-primary-dark text-white text-center font-bold py-4 rounded-lg transition-colors mb-4"
+          >
+            Schedule Service
+          </a>
+          <div class="flex justify-center gap-6 text-sm text-gray">
+            <a href="/faq/" class="hover:text-primary transition-colors">FAQ</a>
+            <a href="/privacy-policy/" class="hover:text-primary transition-colors">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="py-16 bg-light">
+    <div class="max-w-7xl mx-auto px-4">
+      <p class="text-primary text-sm font-semibold uppercase tracking-wider text-center mb-2">Service Areas</p>
+      <h2 class="text-3xl font-bold text-center mb-4">EV Charger Installation Across the Bay Area</h2>
+      <p class="text-gray text-center mb-10 max-w-2xl mx-auto">
+        Our team of licensed electricians delivers quality, compliant EV charger installations for residential and commercial customers throughout the San Francisco Bay Area.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div>
+          <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg>
+            Peninsula & San Francisco
+          </h3>
+          <div class="flex flex-wrap gap-x-6 gap-y-1.5">
+            {serviceAreas
+              .filter((a) => a.region === 'peninsula' || a.region === 'sf-north')
+              .map((area) => (
+                <a
+                  href={`/service-areas/ev-charger-installation-${area.slug}/`}
+                  class="text-sm text-gray hover:text-primary transition-colors"
+                >
+                  {area.city}
+                </a>
+              ))}
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg>
+            South Bay
+          </h3>
+          <div class="flex flex-wrap gap-x-6 gap-y-1.5">
+            {serviceAreas
+              .filter((a) => a.region === 'south-bay')
+              .map((area) => (
+                <a
+                  href={`/service-areas/ev-charger-installation-${area.slug}/`}
+                  class="text-sm text-gray hover:text-primary transition-colors"
+                >
+                  {area.city}
+                </a>
+              ))}
+          </div>
+        </div>
       </div>
 
-      <div class="text-center mt-8">
-        <a href="/service-areas/" class="text-primary font-semibold hover:underline">
-          View all service areas →
-        </a>
+      <div class="text-center mt-8 space-y-2">
+        <p class="text-gray text-sm">We're constantly expanding our service coverage across the Bay Area.</p>
+        <p class="text-gray text-sm">Don't see your city? We likely serve your area too! <a href="/contact/" class="text-primary font-semibold hover:underline">Contact us</a> to check.</p>
+        <p class="text-gray text-sm">Don't see your city? We likely serve your area too! <a href={`tel:${site.phoneRaw}`} class="text-primary font-semibold">Call {site.phone}</a></p>
       </div>
     </div>
   </section>
