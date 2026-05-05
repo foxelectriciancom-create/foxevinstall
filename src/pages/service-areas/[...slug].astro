@@ -19,9 +19,12 @@ const { area } = Astro.props;
   description={`Professional EV charger installation in ${area.city}, CA from $799. Licensed C-10 contractor. Dedicated circuits, panel upgrades, all brands installed. Permit included.`}
 >
   <!-- Hero -->
-  <section class="py-16 bg-gradient-to-br from-primary-dark via-primary to-primary-light text-white">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <p class="text-white/70 text-sm font-semibold uppercase tracking-wider mb-3">EV Charger Installation</p>
+  <section class="relative overflow-hidden py-20 md:py-24">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/images/hero-ev-charger.jpg')">
+      <div class="absolute inset-0 bg-black/60"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 text-center text-white">
+      <p class="text-white/80 text-sm font-semibold uppercase tracking-wider mb-3">EV Charger Installation</p>
       <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
         EV Charger Installation in {area.city}, CA
       </h1>

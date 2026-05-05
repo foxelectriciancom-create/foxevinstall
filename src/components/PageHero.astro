@@ -3,19 +3,23 @@ interface Props {
   title: string;
   subtitle?: string;
   label?: string;
+  image?: string;
 }
 
-const { title, subtitle, label } = Astro.props;
+const { title, subtitle, label, image = '/images/hero-ev-charger.jpg' } = Astro.props;
 ---
 
-<section class="bg-gradient-to-br from-dark via-primary-dark to-primary text-white py-16 md:py-20">
-  <div class="max-w-7xl mx-auto px-4 text-center">
+<section class="relative overflow-hidden py-20 md:py-24">
+  <div class="absolute inset-0 bg-cover bg-center" style={`background-image: url('${image}')`}>
+    <div class="absolute inset-0 bg-black/60"></div>
+  </div>
+  <div class="relative max-w-7xl mx-auto px-4 text-center text-white">
     {label && (
-      <span class="inline-block bg-primary/30 text-primary-light text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+      <span class="inline-block bg-white/15 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
         {label}
       </span>
     )}
     <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">{title}</h1>
-    {subtitle && <p class="text-white/70 text-lg max-w-2xl mx-auto">{subtitle}</p>}
+    {subtitle && <p class="text-white/80 text-lg max-w-2xl mx-auto">{subtitle}</p>}
   </div>
 </section>

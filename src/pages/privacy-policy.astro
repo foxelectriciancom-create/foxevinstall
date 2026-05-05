@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
 import { site } from '../data/site';
 ---
 
@@ -7,9 +8,13 @@ import { site } from '../data/site';
   title="Privacy Policy"
   description="Fox EV Install privacy policy. How we collect, use, and protect your personal information."
 >
+  <PageHero
+    title="Privacy Policy"
+    image="/images/hero-panel.jpg"
+  />
+
   <section class="py-16">
     <div class="max-w-3xl mx-auto px-4 prose prose-gray">
-      <h1 class="text-3xl font-bold mb-8">Privacy Policy</h1>
       <p class="text-sm text-gray mb-8">Last updated: January 2026</p>
 
       <h2 class="text-xl font-bold mt-8 mb-3">Information We Collect</h2>
